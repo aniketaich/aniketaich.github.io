@@ -276,3 +276,10 @@ footer {
     padding: 40px 24px;
   }
 }
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}

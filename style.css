@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap");
 
+/* Remove default browser spacing */
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 html {
@@ -9,98 +17,154 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   background: #f6f2e8;
   color: #173c2d;
 }
 
+/* HERO SECTION */
+
 .hero {
   position: relative;
+  width: 100%;
   min-height: 100vh;
-  background-image: url("hero.jpg");
+
+  background-image: url("./hero.jpg");
   background-size: cover;
-  background-position: center 58%;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   color: white;
   overflow: hidden;
 }
 
+/* Dark filter over the photograph */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(9, 29, 22, 0.66) 0%,
-      rgba(9, 29, 22, 0.34) 48%,
-      rgba(9, 29, 22, 0.08) 100%
-    );
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(8, 27, 20, 0.65) 0%,
+    rgba(8, 27, 20, 0.35) 48%,
+    rgba(8, 27, 20, 0.1) 100%
+  );
 }
+
+/* NAVIGATION */
 
 .navigation {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: min(1400px, calc(100% - 64px));
+
+  width: calc(100% - 100px);
+  max-width: 1500px;
+
   margin: 0 auto;
-  padding: 26px 0;
+  padding: 22px 0;
 }
 
-.logo,
-.nav-links a {
+.logo {
+  flex-shrink: 0;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+
   color: white;
   text-decoration: none;
 }
 
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.35rem;
-  font-weight: 500;
-}
-
 .nav-links {
   display: flex;
-  gap: 30px;
+  align-items: center;
+  gap: 44px;
 }
 
 .nav-links a {
   font-family: "Poppins", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.88rem;
+  font-weight: 400;
+
+  color: white;
+  text-decoration: none;
+
   transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover {
-  opacity: 0.7;
+  opacity: 0.65;
 }
+
+/* HERO TEXT */
 
 .hero-content {
   position: relative;
   z-index: 2;
+
   display: flex;
   align-items: center;
-  min-height: calc(100vh - 100px);
-  width: min(1400px, calc(100% - 64px));
+
+  width: calc(100% - 100px);
+  max-width: 1500px;
+
+  min-height: calc(100vh - 80px);
+
   margin: 0 auto;
-  padding-bottom: 60px;
+  padding: 20px 0 90px;
 }
 
 .hero h1 {
-  max-width: 760px;
+  max-width: 740px;
   margin: 0;
+
   font-family: "Raleway", sans-serif;
-  font-size: clamp(3rem, 6vw, 6.4rem);
+  font-size: clamp(2.8rem, 4.7vw, 5rem);
   font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
-@media (max-width: 800px) {
+/* TABLETS */
+
+@media (max-width: 1050px) {
   .navigation {
-    width: min(100% - 32px, 1400px);
-    align-items: flex-start;
+    width: calc(100% - 48px);
+  }
+
+  .nav-links {
+    gap: 22px;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+
+  .hero-content {
+    width: calc(100% - 48px);
+  }
+
+  .hero h1 {
+    max-width: 650px;
+  }
+}
+
+/* PHONES */
+
+@media (max-width: 760px) {
+  .hero {
+    background-position: 48% center;
+  }
+
+  .navigation {
+    width: calc(100% - 32px);
+    padding: 18px 0;
   }
 
   .nav-links {
@@ -108,16 +172,18 @@ body {
   }
 
   .hero-content {
-    width: min(100% - 32px, 1400px);
     align-items: flex-end;
-    padding-bottom: 70px;
+
+    width: calc(100% - 32px);
+    min-height: calc(100vh - 65px);
+
+    padding: 30px 0 65px;
   }
 
   .hero h1 {
-    font-size: clamp(2.6rem, 11vw, 4.5rem);
-  }
+    max-width: 100%;
 
-  .hero {
-    background-position: 42% center;
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+    line-height: 1.1;
   }
 }

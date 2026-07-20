@@ -1,8 +1,8 @@
 diff --git a/index.html b/index.html
-index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29a183ec2a 100644
+index 2f639e9d839acebae70959fd2f143fa57a532a2e..3f7b58ec3a62c4a5ca9aa540a7302aa6f2f0ecd4 100644
 --- a/index.html
 +++ b/index.html
-@@ -1,232 +1,115 @@
+@@ -1,232 +1,35 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -21,7 +21,7 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -  <title>Aniket Aich | Food Systems Strategist</title>
 -
 +  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-+  <meta name="description" content="Portfolio of Aniket Aich, a food systems advocate building relationships, programs, and educational tools that strengthen food systems and the Earth.">
++  <meta name="description" content="Aniket Aich builds relationships, programs, and educational tools that strengthen food systems and the Earth.">
 +  <title>Aniket Aich | Food Systems Advocate</title>
 +  <link rel="preconnect" href="https://fonts.googleapis.com">
 +  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,19 +35,21 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -    <a class="logo" href="#home">Aniket Aich</a>
 -
 -    <nav>
-+  <header class="site-header">
-+    <a class="brand" href="#home" aria-label="Aniket Aich home">Aniket Aich</a>
-+    <nav aria-label="Primary navigation">
-       <a href="#about">About</a>
+-      <a href="#about">About</a>
 -      <a href="#work">Work</a>
 -      <a href="#experience">Experience</a>
-+      <a href="#projects">Projects</a>
-+      <a href="#resume">Resume</a>
-       <a href="#contact">Contact</a>
+-      <a href="#contact">Contact</a>
++  <header class="site-header" aria-label="Site navigation">
++    <nav class="primary-nav" aria-label="Primary navigation">
++      <a href="#about">about</a>
++      <a href="#projects">projects</a>
++      <a href="#articles">articles</a>
++      <a href="#art">art</a>
++      <a href="#more">more</a>
      </nav>
    </header>
  
--  <main>
+   <main>
 -
 -    <section class="hero" id="home">
 -      <p class="eyebrow">Food Systems · Program Strategy · Social Impact</p>
@@ -68,24 +70,20 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -        <a class="button secondary" href="resume.pdf" target="_blank">
 -          View résumé
 -        </a>
-+  <main id="home">
-+    <section class="hero" aria-labelledby="hero-title">
-+      <img src="hero.jpg" alt="Aniket Aich" class="hero-image">
-+      <div class="hero-text">
-+        <p class="eyebrow">Food systems · Education · Regenerative organic practice</p>
-+        <h1 id="hero-title">I build relationships, programs, and educational tools that strengthen food systems and the Earth.</h1>
++    <section class="landing" id="home" aria-labelledby="landing-title">
++      <div class="landing-image" aria-hidden="true"></div>
++      <div class="landing-overlay" aria-hidden="true"></div>
++      <div class="landing-content">
++        <p class="eyebrow">Food systems · Education · Earth</p>
++        <h1 id="landing-title">I build relationships, programs, and educational tools that strengthen food systems and the Earth.</h1>
        </div>
      </section>
- 
+-
 -    <section class="stats" aria-label="Selected impact">
 -      <div>
 -        <strong>121</strong>
 -        <span>School districts</span>
-+    <section class="split-section about-video" id="about" aria-labelledby="about-title">
-+      <div class="media-placeholder video-card">
-+        <span>Video upload area</span>
-+        <p>Add your video file here when ready, then replace this panel with a video embed or local video.</p>
-       </div>
+-      </div>
 -
 -      <div>
 -        <strong>1.8M</strong>
@@ -95,14 +93,9 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -      <div>
 -        <strong>100+</strong>
 -        <span>Food-system partnerships</span>
-+      <div class="copy-block">
-+        <p class="section-label">Aniket Aich</p>
-+        <h2 id="about-title">Food Systems advocate with an experience of building programs transforming food systems to promote regenerative organic practices.</h2>
-+        <p>My superpower is my ability to work effectively with different groups of people and help them reach actionable solutions to complex problems. My expertise focuses on creating structures and models that promote healthier people, communities, and a healthier planet.</p>
-+        <p>In college I studied Economics. I have worked as a field researcher, high school teacher, college instructor, management consultant, and program manager. My dream is to teach and farm. I hold a master’s degree from UC Berkeley.</p>
-       </div>
-     </section>
- 
+-      </div>
+-    </section>
+-
 -    <section id="about">
 -      <p class="section-label">About</p>
 -
@@ -120,28 +113,7 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -          organizations. I hold a Master of Development Practice from
 -          UC Berkeley.
 -        </p>
-+    <section class="split-section projects-collab" id="projects" aria-labelledby="projects-title">
-+      <div class="panel projects-panel">
-+        <p class="section-label">Projects and initiatives</p>
-+        <h2 id="projects-title">Programs, tools, and collaborations</h2>
-+        <div class="project-list">
-+          <article>
-+            <h3>Finalist — Food Planet Prize</h3>
-+            <p>Conscious Kitchen was selected as a finalist for the 2026 Food Planet Prize for its organic farm to school program in California reaching 121 public school districts and 1.8 million students.</p>
-+            <a href="https://foodplanetprize.org/initiatives/conscious-kitchen-if-you-give-a-kid-an-organic-locally-sourced-peach/" target="_blank" rel="noopener noreferrer">Read about the finalist initiative →</a>
-+          </article>
-+          <article>
-+            <h3>Organic Farm to School Dashboard</h3>
-+            <p>Conscious Kitchen's Organic Farm to School Dashboard maps school districts and organic farms across the state along with contact information for both stakeholders to increase visibility.</p>
-+            <a href="https://conscious-kitchen-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer">Open the dashboard →</a>
-+          </article>
-+          <article>
-+            <h3>The First Organic School Cereal</h3>
-+            <p>A Nature's Path x Conscious Kitchen collaboration led to the development of the first organic school cereal in the US that is now being served in more than 400 schools.</p>
-+            <a href="https://naturespath.com/blogs/press-releases/natures-path-launches-first-school-breakfast-program-us?srsltid=AfmBOooZfjAr9UwwEgOTwzyg3BdK1bEJLNrt4uEjl7Tg6LUZP9BWNgau" target="_blank" rel="noopener noreferrer">View the announcement →</a>
-+          </article>
-+        </div>
-       </div>
+-      </div>
 -    </section>
 -
 -    <section id="work">
@@ -163,7 +135,7 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -            View project →
 -          </a>
 -        </article>
- 
+-
 -        <article class="project-card">
 -          <p class="project-type">Procurement</p>
 -          <h3>Organic Purchasing Cooperative</h3>
@@ -201,14 +173,8 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -        </article>
 -
 -      </div>
-+      <aside class="panel collab-panel" aria-labelledby="collab-title">
-+        <div class="photo-suggestion small-photo">Suggested photo: workshop facilitation or farm visit</div>
-+        <h2 id="collab-title">Collaborations & explorative workshops</h2>
-+        <p>Aniket is available for project collaborations and explorative workshops to create spaces for problem solving in climate and food systems. As a facilitator, he introduces Community Driven Design Approaches in Experience Design and shares his perspective on the Food Systems with a focus on education.</p>
-+        <a class="button" href="#contact">Let’s talk</a>
-+      </aside>
-     </section>
- 
+-    </section>
+-
 -    <section id="experience">
 -      <p class="section-label">Experience</p>
 -      <h2>Where I have worked</h2>
@@ -250,29 +216,10 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -            and communications.
 -          </p>
 -        </article>
-+    <section class="split-section resume-press" id="resume" aria-labelledby="resume-title">
-+      <div class="panel resume-panel">
-+        <p class="section-label">Resume</p>
-+        <h2 id="resume-title">Mission-driven relationship and operations leader.</h2>
-+        <p>Mission-driven relationship and operations leader with experience managing multi-stakeholder portfolios, matching partners to funding and growth opportunities, and supporting projects end to end from inception to execution. Brings a climate- and food-systems lens, and a track record of advancing mission-driven programs, institutional partnerships, and scalable systems.</p>
-+        <div class="button-row">
-+          <a class="button" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-+          <a class="button button-secondary" href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-+        </div>
-+      </div>
- 
-+      <div class="panel press-panel">
-+        <p class="section-label">Print and other side quests</p>
-+        <div class="photo-suggestion wide-photo">Suggested photo: report cover, classroom, or creative project still</div>
-+        <ul class="link-list">
-+          <li><a href="https://drive.google.com/drive/folders/1rxqz2ExCjDJc7pMy30Rq4S5L1pBcqA9D" target="_blank" rel="noopener noreferrer">Conscious Kitchen Impact Report 2025</a></li>
-+          <li><a href="https://www.consciouskitchen.org/blog/a-meal-for-change-empowering-schools-with-organic-choices/" target="_blank" rel="noopener noreferrer">“A Meal for Change: Empowering Schools with Organic Choices”, Conscious Kitchen Blog, 7 Nov 2023</a></li>
-+          <li><a href="https://www.thehindu.com/education/correlating-the-past-with-the-present-can-not-only-change-mindsets-and-attitudes-but-the-future-as-well/article35485870.ece" target="_blank" rel="noopener noreferrer">“Lessons for the future”, The Hindu, 23 July 2021</a></li>
-+          <li><a href="https://www.nagaandthecaptainess.com/" target="_blank" rel="noopener noreferrer">Naga and the Captainess, 2024</a></li>
-+        </ul>
-       </div>
-     </section>
- 
+-
+-      </div>
+-    </section>
+-
 -    <section class="contact-section" id="contact">
 -      <p class="section-label">Contact</p>
 -      <h2>Let’s connect</h2>
@@ -296,21 +243,14 @@ index 2f639e9d839acebae70959fd2f143fa57a532a2e..025590025372781d7ba3469ff3b3bf29
 -        >
 -          LinkedIn
 -        </a>
-+    <section class="contact" id="contact" aria-labelledby="contact-title">
-+      <p class="section-label">Let’s connect</p>
-+      <h2 id="contact-title">Have a project, program, classroom, or workshop in mind?</h2>
-+      <p>I’d love to hear what you are building and explore how we can strengthen food systems together.</p>
-+      <div class="contact-actions">
-+        <a class="button" href="mailto:YOUR-EMAIL@example.com">Email me</a>
-+        <a class="button button-secondary" href="YOUR-LINKEDIN-URL" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-       </div>
-     </section>
+-      </div>
+-    </section>
 -
    </main>
- 
-   <footer>
-     <p>© 2026 Aniket Aich</p>
-   </footer>
+-
+-  <footer>
+-    <p>© 2026 Aniket Aich</p>
+-  </footer>
 -
  </body>
  </html>

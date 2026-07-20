@@ -1,9 +1,8 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/style.css b/style.css
-index a2eadf295809b9041a57b7a5aaf5905a1da10866..951cacca1b35ff94822c3ba3351c6c1dd1cca7c8 100644
+index a2eadf295809b9041a57b7a5aaf5905a1da10866..8a392b4d0db7bec2a5dfc9f9fa6a54ae5e022a72 100644
 --- a/style.css
 +++ b/style.css
-@@ -1,278 +1,354 @@
+@@ -1,278 +1,347 @@
  :root {
    --background: #f5f3ec;
 -  --surface: #ffffff;
@@ -98,37 +97,29 @@ index a2eadf295809b9041a57b7a5aaf5905a1da10866..951cacca1b35ff94822c3ba3351c6c1d
  .hero {
 -  max-width: 900px;
 -  padding-top: 120px;
-+  position: relative;
-+  min-height: calc(100vh - 88px);
-+  display: grid;
-+  align-items: end;
-+  padding: 0 0 72px;
-+  overflow: hidden;
-+  border-radius: 0 0 34px 34px;
-+}
-+
-+.hero::after {
-+  position: absolute;
-+  inset: 0;
-+  content: "";
-+  background: linear-gradient(90deg, rgba(24, 51, 43, 0.74), rgba(24, 51, 43, 0.28) 48%, rgba(24, 51, 43, 0.04));
++  padding: 0 0 88px;
 +}
 +
 +.hero-image {
-+  position: absolute;
-+  inset: 0;
++  display: block;
 +  width: 100%;
-+  height: 100%;
++  height: min(66vh, 680px);
++  min-height: 430px;
 +  object-fit: cover;
 +  object-position: center;
++  border-radius: 0 0 34px 34px;
++  background: var(--accent-light);
 +}
 +
 +.hero-text {
 +  position: relative;
-+  z-index: 1;
 +  max-width: 760px;
-+  padding: 0 clamp(24px, 6vw, 72px);
-+  color: white;
++  margin-top: -148px;
++  margin-left: clamp(20px, 6vw, 72px);
++  padding: clamp(24px, 4vw, 44px);
++  border-radius: 28px;
++  background: rgba(245, 243, 236, 0.94);
++  box-shadow: 0 24px 70px rgba(24, 51, 43, 0.16);
  }
  
  .eyebrow,
@@ -147,7 +138,7 @@ index a2eadf295809b9041a57b7a5aaf5905a1da10866..951cacca1b35ff94822c3ba3351c6c1d
  }
  
 +.hero .eyebrow {
-+  color: #f4d7c7;
++  color: var(--clay);
 +}
 +
 +h1,
@@ -163,12 +154,13 @@ index a2eadf295809b9041a57b7a5aaf5905a1da10866..951cacca1b35ff94822c3ba3351c6c1d
 -  font-size: clamp(3rem, 8vw, 6.7rem);
 -  font-weight: 720;
 -  letter-spacing: -0.065em;
-+  max-width: 760px;
+-  line-height: 0.98;
++  max-width: 720px;
 +  margin-bottom: 0;
-+  font-size: clamp(2.7rem, 6vw, 5.4rem);
++  font-size: clamp(2.4rem, 5.2vw, 4.8rem);
 +  font-weight: 700;
-+  letter-spacing: -0.055em;
-   line-height: 0.98;
++  letter-spacing: -0.045em;
++  line-height: 1.02;
  }
  
  h2 {
@@ -445,20 +437,21 @@ index a2eadf295809b9041a57b7a5aaf5905a1da10866..951cacca1b35ff94822c3ba3351c6c1d
  
    .hero {
 -    padding-top: 80px;
-+    min-height: 74vh;
-+    padding-bottom: 44px;
++    padding-bottom: 68px;
 +  }
 +
-+  .hero::after {
-+    background: linear-gradient(0deg, rgba(24, 51, 43, 0.78), rgba(24, 51, 43, 0.12));
++  .hero-image {
++    height: 56vh;
++    min-height: 320px;
 +  }
 +
 +  .hero-text {
-+    padding: 0 24px;
++    margin: -72px 16px 0;
++    padding: 24px;
 +  }
 +
 +  h1 {
-+    font-size: clamp(2.55rem, 12vw, 4.6rem);
++    font-size: clamp(2.15rem, 10vw, 3.8rem);
    }
  
 -  .stats,
@@ -476,6 +469,3 @@ index a2eadf295809b9041a57b7a5aaf5905a1da10866..951cacca1b35ff94822c3ba3351c6c1d
 +    min-height: 280px;
    }
  }
- 
-EOF
-)

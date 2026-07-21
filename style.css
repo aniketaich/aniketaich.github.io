@@ -274,9 +274,9 @@ body {
 }
 
 .collaboration-content {
-  position: sticky;
-  top: 40px;
+  position: static;
 }
+
 
 .collaboration-panel h2 {
   margin-bottom: 34px;

@@ -308,6 +308,73 @@ body {
   color: rgba(255, 255, 255, 0.65);
   text-align: center;
 }
+
+/* ART SECTION */
+
+.art-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 80px;
+  align-items: center;
+
+  width: min(1400px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 130px 0;
+
+  border-top: 1px solid rgba(23, 61, 48, 0.18);
+}
+
+.art-content {
+  max-width: 560px;
+}
+
+.art-content h2 {
+  margin: 0 0 30px;
+
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(3rem, 5vw, 5.4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.art-content p {
+  margin: 0 0 24px;
+
+  color: #46564f;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.art-button {
+  display: inline-block;
+  margin-top: 14px;
+
+  color: #173d30;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.art-button:hover {
+  opacity: 0.65;
+}
+
+.ceramics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.ceramics-grid img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+}
+
 /* TABLET */
 
 @media (max-width: 1000px) {
@@ -316,7 +383,19 @@ body {
     gap: 64px;
     width: calc(100% - 48px);
     padding: 100px 0;
+    }
+
+        .art-section {
+    grid-template-columns: 1fr;
+    gap: 52px;
+    width: calc(100% - 48px);
+    padding: 100px 0;
   }
+
+  .art-content {
+    max-width: 760px;
+  }
+  
 
   .collaboration-panel {
     padding: 48px;
@@ -364,7 +443,20 @@ body {
     gap: 48px;
     padding: 76px 0;
   }
+  .art-section {
+    width: calc(100% - 32px);
+    gap: 38px;
+    padding: 72px 0;
+  }
 
+  .ceramics-grid {
+    gap: 10px;
+  }
+
+  .art-content h2 {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+  
   .project-item {
     grid-template-columns: 1fr;
     gap: 26px;

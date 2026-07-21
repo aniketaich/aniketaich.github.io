@@ -721,11 +721,10 @@ body {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 
 .project-item:hover .project-image img {
-  transform: scale(1.03);
+  transform: none;
 }
 
 /* COLLABORATION IMAGE */
